@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reservas</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 40px;
+      background-color: #f7f7f7;
+    }
+    form {
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      max-width: 400px;
+      margin: auto;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    label {
+      display: block;
+      margin-top: 10px;
+      font-weight: bold;
+    }
+    input, textarea, button {
+      width: 100%;
+      padding: 8px;
+      margin-top: 5px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    button {
+      background: #007bff;
+      color: white;
+      cursor: pointer;
+      margin-top: 15px;
+    }
+    button:hover {
+      background: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="index.html">Início</a> |
+    <a href="reservas.html">Reservas</a>
+  </nav>
+
+  <h2>Fazer Reserva</h2>
+
+  <form onsubmit="enviarReserva(event)">
+    <label>Nome:</label>
+    <input type="text" id="nome" required>
+
+    <label>Data:</label>
+    <input type="date" id="data" required>
+
+    <label>Hora:</label>
+    <input type="time" id="hora" required>
+
+    <label>Número de pessoas:</label>
+    <input type="number" id="pessoas" min="1" required>
+
+    <label>Observações:</label>
+    <textarea id="obs" rows="3"></textarea>
+
+    <button type="submit">Enviar Reserva</button>
+  </form>
+
+  <footer style="text-align:center; margin-top:20px;">
+    <strong>&copy; 2025 Restaurante Exemplo</strong>
+  </footer>
+
+  <script>
+    function enviarReserva(e) {
+      e.preventDefault();
+      alert("Reserva enviada com sucesso! Entraremos em contacto em breve.");
+      e.target.reset();
+    }
+  </script>
+</body>
+</html>
